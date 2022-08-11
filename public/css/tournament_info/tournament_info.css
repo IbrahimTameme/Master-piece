@@ -1,0 +1,45 @@
+
+
+
+main 
+{
+    background-color: rgb(252, 251, 252);
+}
+
+.info_background
+{
+    /* margin: 5%;  */
+    padding: 7%;
+
+}
+.info_background  .col-9:first-child,.col-2
+{
+
+    border-radius: 1%;
+    box-shadow: 12px 15px 28px -8px rgba(161,161,161,0.59);
+    -webkit-box-shadow: 12px 15px 28px -8px rgba(161,161,161,0.59);
+    -moz-box-shadow: 12px 15px 28px -8px rgba(161,161,161,0.59);
+    
+
+    background-color: white;
+    padding: 3%;
+}
+
+.tourn_name
+{
+    color: #2E0249;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.ammount_of_players
+{
+    font-size: 10px;
+    color: black;
+
+}
+
+.description
+{
+    font-size:larger ;
+}
