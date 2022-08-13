@@ -2,7 +2,7 @@
 
 
 @section('css')
-<link  href="{{ asset ('/css/alter/alter.css')}}" rel="stylesheet">
+<link  href="{{ asset ('/css/profile_info/profile.css')}}" rel="stylesheet">
 
 @endsection
 
@@ -14,14 +14,19 @@
       <div class="col-md-12">
         <div class="grid profile">
           <div class="grid-header">
+            <div class="row ">
+              <div class="col-sm-12 d-flex flex-row-reverse">
+               <a href="/edit_profile"><button class="btn btn-primary" href="/edit_profile" >Edit profile</button></a> 
+              </div>
+            </div>
+            
             <div class="col-xs-2">
-              <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="" alt="">
+              <img src="img/{{  Auth::user()->img}}" class="" alt="">
             </div>
             <div class="col-xs-7">
               <h3>{{  Auth::user()->name}}</h3>
               <p>@bootdey</p>
-              <p>Website Developer, Programmer</p>
-              <p>Bootdey City, NY, USA</p>
+           
             </div>
            
           </div>
@@ -36,11 +41,11 @@
                   <div class="col-md-6">
                     <p><strong>Email:</strong> <a href="mailto:{{  Auth::user()->email}}">{{  Auth::user()->email}}</a></p>
                     <p><strong>Joined on:</strong> {{  Auth::user()->created_at}}</p>
-                    <p><strong>Hobbies:</strong> Read books, hang out, learn history, making website</p>
-                    <p><strong>Skills:</strong> <span class="label label-primary">HTML</span>, <span class="label label-primary">CSS</span>, <span class="label label-primary">JAVASCRIPT</span>, <span class="label label-primary">JQUERY</span>, <span class="label label-primary">AJAX</span>, <span class="label label-primary">PHP</span>, <span class="label label-primary">RUBY</span>, <span class="label label-primary">PHYTON</span>, <span class="label label-primary">C</span></p>
+                    <p><strong>Hobbies:</strong> {{  Auth::user()->hobbies}}</p>
+                    <p><strong>Skills:</strong>    <span class="label label-primary">{{  Auth::user()->skills}}</span></p>
                   </div>
                   <div class="col-md-6">
-                    <p><strong>Address:</strong> bootdey City, NY, USA</p>
+                    <p><strong>Address:</strong>{{  Auth::user()->location}}</p>
                     <p><strong>Phone:</strong> {{  Auth::user()->number}}</p>
                     <p><strong>age</strong>{{  Auth::user()->age}}</p>
                     <p><strong>Reputation:</strong> <span class="text-green"><i class="fa fa-angle-up"></i> 2000</span></p>
@@ -48,6 +53,10 @@
                 </div>
                
               </div>
+            
+
+
+           
               <!-- END PROFILE -->
   
 
@@ -65,7 +74,7 @@
 
 
 
-
+{{-- 
 <style>
   .no_active
   {
@@ -238,26 +247,6 @@
               </div>
 
 
-              {{-- <div class="col-md-8">
-                <div class="card mb-3">
-                  <div class="card-body no_active">
-                     <p class="text_no_active">no active jobs</p>
-                    <div class="row ">
-                 
-                  <a class="btn  " target="__blank" href="show_request" style="background-color: #008E89; color:white;">Look for an opportunity </a>
-
-                    </div>
-                  </div>
-                </div>
-              </div> --}}
-           
-
-
-              <!-- <a class="btn  " target="__blank" href="show_request">Look for an opportunity </a> -->
-          
-           
-            
-           
          
 
 
@@ -283,4 +272,4 @@
         document.getElementById('use1').style.display="none";
       }
     </script>
-
+ --}}

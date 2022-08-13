@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+
+@section('css')
+<link  href="{{ asset ('/css/tournaments_cards/card.css')}}" rel="stylesheet">
+{{-- tournament_info --}}
+@endsection
+
+
 @section('content')
 
     

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TournamentController;
+use App\Http\Controllers\HomeController;
+
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -41,12 +43,14 @@ Route::get('info_tournament/id/{tourn_id}/',[TournamentController::class, 'info_
 Route::get('reg_to_tourn/id/{user_id}/{tourn_id}',[TournamentController::class, 'reg_to_tourn']);
 
 // user page 
-Route::get('/profile_page', [App\Http\Controllers\HomeController::class, 'profile_page'])->name('home');
+Route::get('/profile_page', [HomeController::class, 'profile_page'])->name('home');
+Route::get('/edit_profile', [HomeController::class, 'edit_profile'])->name('home');
+
 
 // user edit 
 
-Route::post('/added',  [TestController::class, 'editPic']);
-Route::post('/updateuser',  [TestController::class, 'updateuser']);
+Route::post('/added',  [HomeController::class, 'editPic']);
+Route::post('/updateuser',  [HomeController::class, 'updateuser']);
 
 
 

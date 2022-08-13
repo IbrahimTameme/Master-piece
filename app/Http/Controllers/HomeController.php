@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+
 
 class HomeController extends Controller
 {
@@ -41,6 +45,21 @@ class HomeController extends Controller
     }
 
 
+    public function edit_profile()
+    {
+
+        
+        
+        $id = auth()->user()->id;
+
+
+    return view('edit_profile');
+
+        
+    }
+
+
+
 
     ///// user controlloers 
     public function updateuser(Request $request)
@@ -48,15 +67,16 @@ class HomeController extends Controller
   $id = Auth::user()->id;
   
   $name=$request->input('name');
-  $lname=$request->input('lname');
-  $phone=$request->input('phone');
   $email=$request->input('email');
-  $time=$request->input('time');
-  $timeTo=$request->input('timeTo');
+  $hobbies=$request->input('hobbies');
+  $skills=$request->input('skills');
+  $location=$request->input('location');
+  $number=$request->input('number');
   $age=$request->input('age');
-  $gender=$request->input('gender');
-  DB::update('update users set name = ? ,lname = ? , phone=?, email=?, age=?, gender=?, time=?, timeTo=? where id = ?', [$name,$lname,$phone,$email,$age,$gender,$time,$timeTo,$id]);
-  return redirect('/home')->with('message','The data has been updated successfully');
+  // DB::update('update users set name = ?  where id = ?', [$name,$id]);
+  DB::update('update users set name = ? ,email = ? , hobbies=?, skills=?, location=?, number=?, age=? where id = ?', [$name,$email,$hobbies,$skills,$location,$number,$age,$id]);
+
+  return redirect('/profile_page')->with('message','The data has been updated successfully');
 
 }
 
@@ -70,7 +90,7 @@ class HomeController extends Controller
     $file_store= $filename;
     $data-> img =$file_store; /// cloum name
     $data->update();
-    return redirect('home');
+    return redirect('profile_page');
 
 
   }

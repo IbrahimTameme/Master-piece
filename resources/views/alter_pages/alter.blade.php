@@ -1,237 +1,103 @@
-<section class="vh-100">
+
+@extends('layouts.app')
 
 
-  <div class="container h-100">
+@section('css')
+<link  href="{{ asset ('/css/alter/alter.css')}}" rel="stylesheet">
 
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-11">
-        <div class="card" style="border:none" >
-          <div class="card-body p-md-5">
-            <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-lg-2float-left" >
-                <img
-                  src="https://midoshriks-school.netlify.app/assets/sing/imgs/login-form-img.png"
-                  class="img-fluid"
-                  alt="Sample image"
-                  style="height: 419px"
-                />
-              </div>
-              {{-- name --}}
-              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1" style="borderLeft:1px solid #363062">
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 " style="color:#7A4495">
-                  Sign up
-                </p>
-                <form class="mx-1 mx-md-4" method="POST" action="{{ route('register') }}" >
-                  @csrf
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw" style="color:#7A86B6">
-                    <div class="form-outline flex-fill mb-0">
-                    <label class="form-label" htmlFor="name" style="color:#937DC2">
-                        Your Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        class="form-control"
-                        @error('name') is-invalid @enderror name="name" value="{{ old('name') }}" required autocomplete="name" 
-                      />
-                      @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+@endsection
 
-                    </div>
-                  </div>
-{{-- email --}}
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-envelope fa-lg me-3 fa-fw" style="color:#7A86B6">
-                    <div class="form-outline flex-fill mb-0">
-                    <label class="form-label" htmlFor="email" style="color:#937DC2">
-                        Your Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        class="form-control"
-                        @error('email') is-invalid @enderror name="email" value="{{ old('email') }}" required autocomplete="email"
-                      />
-                      @error('email')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
-                    </div>
-                  </div>
-
-{{-- image --}}
-                  
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw" style="color:#7A86B6">
-                    <div class="form-outline flex-fill mb-0">
-                    <label class="form-label" htmlFor="image" style="color:#937DC2">
-                      Image
-                      </label>
-                      <input
-                        type="file"
-                        id="image"
-                        class="form-control"
-                        @error('image') is-invalid @enderror name="image" value="{{ old('image') }}" required autocomplete="number"
-                      />
-                      @error('email')
-                      <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-                    </div>
-                  </div>
-
-{{-- password --}}
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw" style="color:#7A86B6">
-                    <div class="form-outline flex-fill mb-0">
-                    <label class="form-label" htmlFor="password" style="color:#937DC2">
-                        Password
-                      </label>
-                      <input
-                        type="password"
-                        id="password"
-                        class="form-control"
-                        @error('password') is-invalid @enderror name="password" required autocomplete="new-password"
-                      />
-                      <span>{error.passError}</span>
-                    </div>
-                  </div>
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw" style="color:#7A86B6">
-                    <div class="form-outline flex-fill mb-0">
-                    <label class="form-label" htmlFor="number" style="color:#937DC2">
-                        Number 
-                      </label>
-                      <input
-                        type="text"
-                        id="number"
-                        class="form-control"
-                        @error('number') is-invalid @enderror name="number" value="{{ old('number') }}" required autocomplete="number"
-                      />
-                      @error('email')
-                      <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-                    </div>
-                  </div>
+@section('content')
 
 
 
-{{-- age --}}
-                  
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw" style="color:#7A86B6">
-                    <div class="form-outline flex-fill mb-0">
-                    <label class="form-label" htmlFor="age" style="color:#937DC2">
-                       age
-                      </label>
-                      <input
-                        type="text"
-                        id="age"
-                        class="form-control"
-                        @error('age') is-invalid @enderror name="age" value="{{ old('age') }}" required autocomplete="number"
-                      />
-                      @error('email')
-                      <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-                    </div>
-                  </div>
-
-{{--  location --}}
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw" style="color:#7A86B6">
-                    <div class="form-outline flex-fill mb-0">
-                    <label class="form-label" htmlFor="location" style="color:#937DC2">
-                        location
-                      </label>
-                      <input
-                        type="text"
-                        id="location"
-                        class="form-control"
-                        @error('location') is-invalid @enderror name="location" value="{{ old('location') }}" required autocomplete="number"
-                      />
-                      @error('email')
-                      <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-                    </div>
-                  </div>
-
-
-{{-- hobbies --}}
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw" style="color:#7A86B6">
-                    <div class="form-outline flex-fill mb-0">
-                    <label class="form-label" htmlFor="hobbies" style="color:#937DC2">
-                        hobbies
-                      </label>
-                      <input
-                        type="text"
-                        id="hobbies"
-                        class="form-control"
-                        @error('hobbies') is-invalid @enderror name="hobbies" value="{{ old('hobbies') }}" required autocomplete="number"
-                      />
-                    
-                    </div>
-                  </div>
-
-{{-- skills --}}
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw" style="color:#7A86B6">
-                    <div class="form-outline flex-fill mb-0">
-                    <label class="form-label" htmlFor="skills" style="color:#937DC2">
-                        skills
-                      </label>
-                      <input
-                        type="text"
-                        id="skills"
-                        class="form-control"
-                        @error('skills') is-invalid @enderror name="skills" value="{{ old('skills') }}" required autocomplete="number"
-                      />
-                    
-                    </div>
-                  </div>
-
-
-
-                 {{-- <div class="form-check d-flex justify-content-center mb-5">
-                    <input
-                      class="form-check-input me-2"
-                      type="checkbox"
-                      defaultValue=""
-                      id="form2Example3c"
-                    />
-
-                    <label class="form-check-label" htmlFor="form2Example3">
-                      I agree all statements in{" "}
-                      <a href="#!">Terms of service</a>
-                    </label>
-                  </div>  --}}
-
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                  
-            <input type="submit"  defaultValue="Sign up" disabled/>
-            <input type="submit"  defaultValue="Sign up" value="Submit" style="color:#192294,borderColor:#192294,borderRadius:10px"/>
-            
-                  </div>
-                </form>
-              </div>
-              
+<div class="container-xl px-4 mt-4">
+    <!-- Account page navigation-->
+    <nav class="nav nav-borders">
+        <a class="nav-link active ms-0" href="https://www.bootdey.com/snippets/view/bs5-edit-profile-account-details" target="__blank">Profile</a>
+        <a class="nav-link" href="https://www.bootdey.com/snippets/view/bs5-profile-billing-page" target="__blank">Billing</a>
+        <a class="nav-link" href="https://www.bootdey.com/snippets/view/bs5-profile-security-page" target="__blank">Security</a>
+        <a class="nav-link" href="https://www.bootdey.com/snippets/view/bs5-edit-notifications-page"  target="__blank">Notifications</a>
+    </nav>
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header">Profile Picture</div>
+                <div class="card-body text-center">
+                    <!-- Profile picture image-->
+                    <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <!-- Profile picture help block-->
+                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                    <!-- Profile picture upload button-->
+                    <button class="btn btn-primary" type="button">Upload new image</button>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Account Details</div>
+                <div class="card-body">
+                    <form>
+                        <!-- Form Group (username)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username">
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputFirstName">First name</label>
+                                <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Valerie">
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">Last name</label>
+                                <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Luna">
+                            </div>
+                        </div>
+                        <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (organization name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputOrgName">Organization name</label>
+                                <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap">
+                            </div>
+                            <!-- Form Group (location)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">Location</label>
+                                <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA">
+                            </div>
+                        </div>
+                        <!-- Form Group (email address)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (phone number)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Phone number</label>
+                                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567">
+                            </div>
+                            <!-- Form Group (birthday)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputBirthday">Birthday</label>
+                                <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
+                            </div>
+                        </div>
+                        <!-- Save changes button-->
+                        <button class="btn btn-primary" type="button">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</section>
+</div>
+
+
+@endsection

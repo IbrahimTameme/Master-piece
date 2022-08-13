@@ -39,8 +39,7 @@
   <!-- card style -->
   <link  href="{{ asset ('/css/card.css')}}" rel="stylesheet">
 {{-- tournaments cards css --}}
-<link  href="{{ asset ('/css/tournaments_cards/card.css')}}" rel="stylesheet">
-{{-- tournament_info --}}
+
 
 @yield('css')
 

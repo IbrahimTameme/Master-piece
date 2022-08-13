@@ -6,6 +6,11 @@ main
     background-color: rgb(252, 251, 252);
 }
 
+.row img 
+{
+    border-radius: 1%;
+}
+
 .info_background
 {
     /* margin: 5%;  */
