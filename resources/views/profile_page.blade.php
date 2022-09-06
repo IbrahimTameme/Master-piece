@@ -7,6 +7,12 @@
 @endsection
 
 @section('content')
+@if((session('done') != null))
+<div class="alert alert-success" role="alert">
+
+  {{ session('done') }}
+  @endif 
+  </div>
 
 <div class="container bootstrap snippets bootdey">
   <div class="row">
@@ -21,7 +27,7 @@
             </div>
             
             <div class="col-xs-2">
-              <img src="img/{{  Auth::user()->img}}" class="" alt="">
+              <img src="img/{{ Auth::user()->img}}" class="imgg" alt="">
             </div>
             <div class="col-xs-7">
               <h3>{{  Auth::user()->name}}</h3>
@@ -53,7 +59,32 @@
                 </div>
                
               </div>
+           
+            </div>
+
+            <div class="grid-body">
             
+              <div class="tab-content">
+                <!-- BEGIN PROFILE -->
+                <div class="tab-pane active" id="profile">
+                  <p class="lead">Created tournaments</p>
+                  @foreach ($view1 as $data)
+
+                  <div class="card">
+                    <div class="card-body">
+                      {{$data->tourn_name}}
+                    </div>
+                  </div>
+                      
+                  @endforeach
+                  {{$view1}}
+                  <div class="row">
+                   
+                  </div>
+                 
+                </div>
+             
+              </div>
 
 
            
@@ -62,7 +93,11 @@
 
 
 
-
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 
 

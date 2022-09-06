@@ -16,8 +16,20 @@
           <div class="row">
             <div class="col text-center mb-5">
                <h1 class="display-4">Bootstrap 4 Cards With Background Image</h1>
-        <p class="lead">Lorem ipsum dolor sit amet at enim hac integer volutpat maecenas pulvinar. </p>
-            </div>
+               <form method="post" action="{{url('/tournaments')}}" id='use'> 
+                @csrf
+               <select class="form-select" id="category"  name="category" type="text" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="*">All</option>       
+                @foreach ($view1 as $data)
+                <option value= {{$data->category_id}}>
+                 
+                  {{$data->category_name}}</option>
+                @endforeach
+              </select>    
+              <input type="submit" value="Submit">
+            </form>
+                  </div>
           </div>
         <div class="row">
      
@@ -55,10 +67,8 @@
     
     @endforeach
     
-
     
      
-          
       </div>
         
       </div>

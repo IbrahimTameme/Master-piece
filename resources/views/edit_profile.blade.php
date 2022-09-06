@@ -3,7 +3,7 @@
 
 
 @section('css')
-<link  href="{{ asset ('/css/alter/alter.css')}}" rel="stylesheet">
+<link  href="{{ asset ('/css/form/form.css')}}" rel="stylesheet">
 
 @endsection
 

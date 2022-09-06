@@ -61,10 +61,13 @@
            
             @yield('content')
             @yield('content2')
-          
+            
+          @include('layouts.footer')
         </main>
     </div>
+
+    
 </body>
 
-@include('layouts.footer')
+
 </html>

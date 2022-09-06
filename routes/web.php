@@ -37,18 +37,24 @@ Route::get('/service', function()
 
 //all tournaments route
 Route::get('/tournaments',[TournamentController::class, 'tournaments']);
+Route::post('/tournaments',[TournamentController::class, 'tournaments_filter']);
+
 //single tournament route
 Route::get('info_tournament/id/{tourn_id}/',[TournamentController::class, 'info_tournament']);
 //register to tournament route
 Route::get('reg_to_tourn/id/{user_id}/{tourn_id}',[TournamentController::class, 'reg_to_tourn']);
+// Add tournament
+Route::get('/add_tournament', [TournamentController::class, 'add_tournament'])->name('home');
+Route::post('/create_tournament', [TournamentController::class, 'create_tournament'])->name('home');
+
 
 // user page 
 Route::get('/profile_page', [HomeController::class, 'profile_page'])->name('home');
-Route::get('/edit_profile', [HomeController::class, 'edit_profile'])->name('home');
+
 
 
 // user edit 
-
+Route::get('/edit_profile', [HomeController::class, 'edit_profile'])->name('home');
 Route::post('/added',  [HomeController::class, 'editPic']);
 Route::post('/updateuser',  [HomeController::class, 'updateuser']);
 

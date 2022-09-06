@@ -21,9 +21,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="tournaments"> Tournaments</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                   <a class="nav-link" href="/profile_page"> user </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact us</a>
                 </li>
@@ -34,7 +34,7 @@
             </div>
             <div class="quote_btn-container ml-0 ml-lg-4 d-flex justify-content-center">
               <a href="">
-                Get A quote
+                ADD Tournaments
               </a>
             </div>
           </div>

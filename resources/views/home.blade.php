@@ -11,6 +11,10 @@
 
 @section('content')
 
+
+
+
+
     <!-- slider section -->
     <section class=" slider_section position-relative">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -57,7 +61,8 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          @foreach($view1 as $data)
+          <div class="carousel-item ">
             <div class="slider_item-box">
               <div class="slider_item-container">
                 <div class="container">
@@ -66,31 +71,18 @@
                       <div class="slider_item-detail">
                         <div>
                           <h1>
-                            Basketball  <br />
-                            matchs
+                         {{$data->sliders_name}}
                           </h1>
-                          <p>
-                            There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered
-                            alteration in some form, by injected humour, or
-                            randomised words which don't look even slightly
-                            believable.
+                          <p>{{$data->sliders_desc}}
                           </p>
-                          <div class="d-flex">
-                            <a href="" class="text-uppercase custom_orange-btn mr-3">
-                              Sign Now
-                            </a>
-                            <a href="" class="text-uppercase custom_dark-btn">
-                              Contact Us
-                            </a>
-                          </div>
+                          
                         </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="slider_img-box">
                         <div>
-                          <img src="https://cdn2.vectorstock.com/i/1000x1000/94/86/basketball-tournament-vector-1979486.jpg" alt="" class="img_slider" />
+                          <img src="../images/{{$data->sliders_img}}" alt="" class="img_slider" />
                         </div>
                       </div>
                     </div>
@@ -99,48 +91,8 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="slider_item-box">
-              <div class="slider_item-container">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="slider_item-detail">
-                        <div>
-                          <h1>
-                            Welcome to <br />
-                            The Grand Tournemt
-                          </h1>
-                          <p>
-                            There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered
-                            alteration in some form, by injected humour, or
-                            randomised words which don't look even slightly
-                            believable.
-                          </p>
-                          <div class="d-flex">
-                            <a href="" class="text-uppercase custom_orange-btn mr-3">
-                              Sign Now
-                            </a>
-                            <a href="" class="text-uppercase custom_dark-btn">
-                              Contact Us
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="slider_img-box">
-                        <div>
-                          <img src="https://iq-study.com/wp-content/uploads/2021/04/tournaments.jpg" alt="" class="img_slider" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          @endforeach
+         
         </div>
         <div class="custom_carousel-control">
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -216,71 +168,23 @@
     <!-- cart section -->
     
     <div class="cards-wrapper">
+      @foreach($view2 as $data) 
       <div class="card-wrapper">
-          <div class="card-1 card-object card-object-hf"><a class="face front" href="#">
+          <div class="card-1 card-object card-object-hf" style="background: #222  url(../images/{{$data->category_image}}) 90% 35% no-repeat; "><a class="face front" href="#">
                   <div class="title-wrapper">
-                      <div class="title">Jenny</div>
-                      <div class="subtitle">felis hairyus</div>
-                  </div>
-              </a><a class="face back" href="#">
-                  <div class="img-wrapper">
-                      <div class="avatar"></div>
-                  </div>
-                  <div class="info-wrapper">
-                      <div class="info-title">Jenny</div>
-                      <ul class="info-content">
-                          <li class="info-content-item">Age <span>6 years</span></li>
-                          <li class="info-content-item">Length <span>46cm</span></li>
-                          <li class="info-content-item">Weight <span>4kg</span></li>
-                      </ul>
-                  </div>
+                      <div class="title">{{$data->category_name}}</div>
+                 
+                  </div>              
               </a></div>
       </div>
-      <div class="card-wrapper">
-          <div class="card-2 card-object card-object-hf"><a class="face front" href="#">
-                  <div class="title-wrapper">
-                      <div class="title">Mishka</div>
-                      <div class="subtitle">felis catus</div>
-                  </div>
-              </a><a class="face back" href="#">
-                  <div class="img-wrapper">
-                      <div class="avatar"></div>
-                  </div>
-                  <div class="info-wrapper">
-                      <div class="info-title">Mishka</div>
-                      <ul class="info-content">
-                          <li class="info-content-item">Age <span>7 years</span></li>
-                          <li class="info-content-item">Length <span>42cm</span></li>
-                          <li class="info-content-item">Weight <span>3.8kg</span></li>
-                      </ul>
-                  </div>
-              </a></div>
-      </div>
-      <div class="card-wrapper">
-        <div class="card-3 card-object card-object-hf"><a class="face front" href="#">
-                <div class="title-wrapper">
-                    <div class="title">Football</div>
-                    <div class="subtitle">15/7/2022 - 20/5/2022</div>
-                </div>
-            </a><a class="face back" href="#">
-                <div class="img-wrapper">
-                    <div class="avatar"></div>
-                </div>
-                <div class="info-wrapper">
-                    <div class="info-title">Kyra</div>
-                    <ul class="info-content">
-                        <li class="info-content-item">Sport <span>Football</span></li>
-                        <li class="info-content-item">Length <span>15/7/2022 - 20/5/2022</span></li>
-                        <li class="info-content-item">Size <span>8 Teams</span></li>
-                    </ul>
-                </div>
-            </a></div>
-    </div>
+     
+      @endforeach
+   
     </div>
 
 
 
-<!-- cart end section -->
+ <!-- cart end section -->
   <!-- fruits section -->
 
   <section class="fruit_section">
@@ -537,4 +441,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap">
   </script>
   <!-- end google map js -->
+
+
 @endsection

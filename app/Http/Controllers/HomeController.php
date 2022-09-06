@@ -27,19 +27,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $view1 = DB::table('sliders')->select('sliders_name','sliders_img','sliders_desc')->get();
+      $view2 = DB::table('categories')->select('category_name','category_image')->get();
+
+        return view('home',compact('view2','view1'));
     }
 
 
     public function profile_page()
     {
 
+
+       $id = auth()->user()->id;
+      $view1 = DB::table('tournaments')->where('tourn_creator', $id)->get();
+
         
-        
-        $id = auth()->user()->id;
+       
 
 
-    return view('profile_page');
+    return view('profile_page',compact('view1'));
 
         
     }
@@ -49,8 +55,8 @@ class HomeController extends Controller
     {
 
         
-        
         $id = auth()->user()->id;
+
 
 
     return view('edit_profile');

@@ -10,19 +10,71 @@ use Illuminate\Support\Facades\Auth;
 class TournamentController extends Controller
 {
 
+  public function tournaments_filter (Request $request) {
+    $id = Auth::user()->id;
+    $data = User::find($id);
+  
+  
+       $view1 = DB::table('categories')->select('category_name','category_id')->get();
+  
+    $category = $request->input('category');
+  
+  
+   
+      $category = $request->input('category');
+      
+  
+  
+      $view2 = DB::table('tournaments')->where('tourn_category',$category)
+        ->join('users', 'users.id','=','tournaments.tourn_creator')
+        ->select('tournaments.*','users.name')->get();
+
+
+        if ($category == '*') {
+          $view2 = DB::table('tournaments')
+          ->join('users', 'users.id','=','tournaments.tourn_creator')
+          ->select('tournaments.*','users.name')->get();
+  
+        }
+    
+    
+       
+    
+  
+  return view('tournaments',compact('view1','view2'));
+  
+  
+  
+  }
+  
+
     public function tournaments()
 {
   $id = Auth::user()->id;
     $data = User::find($id);
- 
 
-    $view2 = DB::table('tournaments')
+
+       $view1 = DB::table('categories')->select('category_name','category_id')->get();
+
+        $view2 = DB::table('tournaments')
     ->join('users', 'users.id','=','tournaments.tourn_creator')
     ->select('tournaments.*','users.name')->get();
 
-return view('tournaments',compact('view2'));
+   
+
+
+   
+   
+    
+       
+    
+
+return view('tournaments',compact('view1','view2'));
   
 }
+
+
+
 
 
 public function info_tournament($tourn_id)
@@ -55,6 +107,38 @@ public function reg_to_tourn($user_id , $tourn_id)
   
 
 }
+
+
+ public function add_tournament()
+{
+
+  return view('add_tournament');
+}
+
+
+public function create_tournament(Request $request )
+{
+
+  $id = Auth::user()->id;
+
+  $name=$request->input('name');
+  $category=$request->input('category');
+  $number_of_teams=$request->input('number_of_teams');
+  $prize=$request->input('prize');
+  $start_date=$request->input('start_date');
+  $end_date=$request->input('end_date');
+  $description=$request->input('description');
+
+  DB::insert('insert into tournaments (tourn_name,tourn_category,tourn_teams_amount,tourn_desciption,tourn_start_data,tourn_end_data,tourn_prize,tourn_creator) values (?,?,?,?,?,?,?,?)',[$name,$category,$number_of_teams,$description,$start_date,$end_date,$prize,$id]);
+
+  return redirect('/profile_page')->with('done','You have successfully added a tournament');
+
+
+}
+
+
+
+
 
 
 
