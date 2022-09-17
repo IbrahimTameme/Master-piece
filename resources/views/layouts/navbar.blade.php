@@ -1,4 +1,4 @@
-
+<script src="https://kit.fontawesome.com/f32d43040b.js" crossorigin="anonymous"></script>
 <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
@@ -25,15 +25,17 @@
                   <a class="nav-link" href="/profile_page"> user </a>
                 </li> --}}
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact us</a>
+                  <a class="nav-link" href="/contact">Contact us</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/news">News</a>
                 </li>
               </ul>
-              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-              </form>
+
             </div>
             <div class="quote_btn-container ml-0 ml-lg-4 d-flex justify-content-center">
-              <a href="">
+              <a href="/add_tournament">
                 ADD Tournaments
               </a>
             </div>
@@ -41,37 +43,42 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
               <!-- Authentication Links -->
-              @guest
-                  @if (Route::has('login'))
-                      <li class="nav-item">
-                          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                      </li>
-                  @endif
+              <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Acount </a>
+                <div class="dropdown-menu rounded-0 border-0 m-0">
+                    @guest
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="dropdown-item" href="{{ route('login') }}"><i class="fa-solid fa-right-to-bracket"> </i> {{ __('Login') }}</a>
+                        </li>
+                    @endif
 
-                  @if (Route::has('register'))
-                      <li class="nav-item">
-                          <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                      </li>
-                  @endif
-              @else
-              
-                 
-                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/profile_page" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                          {{ Auth::user()->name }}
-                      </a>
-                      <div class="" aria-labelledby="navbarDropdown">
-                        <a class="" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
+                    @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="{{ route('register') }}"><i class="fa-solid fa-user-plus"></i> {{ __('Signup') }} </a>
+                    </li>
+                @endif
+            @else
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>
-                  
-              @endguest
+
+
+                    <a href="/user" class="dropdown-item"><i class="fa-solid fa-user">  </i> {{ Auth::user()->name }} </a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();"><i class="fa-solid fa-arrow-right-from-bracket"> </i>{{ __('Logout') }}
+                    
+                 </a>
+
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+
+
+                </div>@endguest
+
+
+                
+            </div> 
           </ul>
         </nav>
       </div>

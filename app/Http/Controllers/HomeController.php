@@ -29,8 +29,10 @@ class HomeController extends Controller
     {
       $view1 = DB::table('sliders')->select('sliders_name','sliders_img','sliders_desc')->get();
       $view2 = DB::table('categories')->select('category_name','category_image')->get();
+      $view3 = DB::table('contacts')->take(3)->get();
 
-        return view('home',compact('view2','view1'));
+
+        return view('home',compact('view1','view2','view3'));
     }
 
 

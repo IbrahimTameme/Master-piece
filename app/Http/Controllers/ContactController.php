@@ -7,21 +7,28 @@ use APP\Models\contact;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class ContactController extends Controller
 {
    
-    public function create_contact(array $data)
+    public function create_contact(Request $request)
     {
-        return contact::create([
-            'name' => $data['name'],
-            'phone_number' => $data['phone_number'],
-            'email' => $data['email'],
-            'message' => $data['message'],
-            
-        ]);
+        $name=$request->input('name');
+        $phone_number=$request->input('phone_number');
+        $email=$request->input('email');
+        $message=$request->input('message');
+      
+      
+        DB::insert('insert into contacts (name,phone_number,email,message) values (?,?,?,?)',[$name,$phone_number,$email,$message]);
 
-        echo "this worked";
+
+      
+        return redirect('home')->with('done','You have successfully added a tournament');
+      
+
+        
     }
 }

@@ -108,62 +108,7 @@
     <!-- end slider section -->
   </div>
 
-  <!-- service section -->
 
-  <section class="service_section layout_padding ">
-    <div class="container">
-      <h2 class="custom_heading">Our Services</h2>
-      <p class="custom_heading-text">
-        There are many variations of passages of Lorem Ipsum available, but
-        the majority have
-      </p>
-      <div class=" layout_padding2">
-        <div class="card-deck">
-          <div class="card">
-            <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/128/3069/3069052.png" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">Create Tournament</h5>
-              <p class="card-text">
-                There are many variations of passages of Lorem Ipsum
-                available, but the majority have suffered alteration in some
-                form, by injected humour, or randomised words which don't look
-                even slightly believable.
-              </p>
-              <div>
-                <a href="" class="custom_dark-btn">
-                  Buy Now
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="https://static.thenounproject.com/png/1088365-200.png" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">Join Tournament</h5>
-              <p class="card-text">
-                There are many variations of passages of Lorem Ipsum
-                available, but the majority have suffered alteration in some
-                form, by injected humour, or randomised words which don't look
-                even slightly believable.
-              </p>
-              <div>
-                <a href="" class="custom_dark-btn">
-                  Buy Now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <a href="" class="custom_dark-btn readmore_btn">
-          Read More
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- end service section -->
 
     <!-- cart section -->
     
@@ -273,6 +218,63 @@
  
   <!-- end tasty section -->
 
+  <!-- service section -->
+
+  <section class="service_section layout_padding ">
+    <div class="container">
+      <h2 class="custom_heading">Our Services</h2>
+      <p class="custom_heading-text">
+        There are many variations of passages of Lorem Ipsum available, but
+        the majority have
+      </p>
+      <div class=" layout_padding2">
+        <div class="card-deck">
+          <div class="card">
+            <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/128/3069/3069052.png" alt="Card image cap" />
+            <div class="card-body">
+              <h5 class="card-title">Create Tournament</h5>
+              <p class="card-text">
+                There are many variations of passages of Lorem Ipsum
+                available, but the majority have suffered alteration in some
+                form, by injected humour, or randomised words which don't look
+                even slightly believable.
+              </p>
+              <div>
+                <a href="add_tournament" class="custom_dark-btn">
+                  Create 
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="https://static.thenounproject.com/png/1088365-200.png" alt="Card image cap" />
+            <div class="card-body">
+              <h5 class="card-title">Join Tournament</h5>
+              <p class="card-text">
+                There are many variations of passages of Lorem Ipsum
+                available, but the majority have suffered alteration in some
+                form, by injected humour, or randomised words which don't look
+                even slightly believable.
+              </p>
+              <div>
+                <a href="/tournaments" class="custom_dark-btn">
+                  Join
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a href="" class="custom_dark-btn readmore_btn">
+          Read More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
   <!-- client section -->
 
   <section class="client_section layout_padding">
@@ -285,63 +287,52 @@
       <div>
         <div id="carouselExampleControls-2" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="client_container layout_padding2">
-                <div class="client_img-box">
-                  <img src="images/client.png" alt="" />
-                </div>
-                <div class="client_detail">
-                  <h3>
-                    Johnhex
-                  </h3>
-                  <p class="custom_heading-text">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in
-                    some form, by injected humour, or randomised words which
-                    don't look even slightly believable. If you are <br />
-                    going to use a passage of Lorem Ipsum, you need to be sure
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="client_container layout_padding2">
-                <div class="client_img-box">
-                  <img src="images/client.png" alt="" />
-                </div>
-                <div class="client_detail">
-                  <h3>
-                    Johnhex
-                  </h3>
-                  <p class="custom_heading-text">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in
-                    some form, by injected humour, or randomised words which
-                    don't look even slightly believable. If you are <br />
-                    going to use a passage of Lorem Ipsum, you need to be sure
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="client_container layout_padding2">
-                <div class="client_img-box">
-                  <img src="images/client.png" alt="" />
-                </div>
-                <div class="client_detail">
-                  <h3>
-                    Johnhex
-                  </h3>
-                  <p class="custom_heading-text">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in
-                    some form, by injected humour, or randomised words which
-                    don't look even slightly believable. If you are <br />
-                    going to use a passage of Lorem Ipsum, you need to be sure
-                  </p>
-                </div>
-              </div>
-            </div>
+           
+@isset($view3)
+@foreach ($view3 as $data)
+@if ($data->id == 1)
+<div class="carousel-item active">
+  <div class="client_container layout_padding2">
+    <div class="client_img-box">
+      <img src="images/client.png" alt="" />
+    </div>
+    <div class="client_detail">
+      <h3>
+        {{$data->name}}
+      </h3>
+      <p class="custom_heading-text">
+        {{$data->message}}
+      </p>
+    </div>
+  </div>
+</div>        
+
+    
+@else
+    
+
+
+<div class="carousel-item ">
+  <div class="client_container layout_padding2">
+    <div class="client_img-box">
+      <img src="images/client.png" alt="" />
+    </div>
+    <div class="client_detail">
+      <h3>
+        {{$data->name}}
+      </h3>
+      <p class="custom_heading-text">
+        {{$data->message}}
+      </p>
+    </div>
+  </div>
+</div>
+@endif
+    
+@endforeach
+    
+@endisset
+
           </div>
           <div class="custom_carousel-control">
             <a class="carousel-control-prev" href="#carouselExampleControls-2" role="button" data-slide="prev">
@@ -358,12 +349,22 @@
       </div>
     </div>
   </section>
+ 
 
   <!-- end client section -->
 
   <!-- contact section -->
+
+ 
+
   <section class="contact_section layout_padding">
     <div class="container">
+       
+@if((session('done') != null))
+<div class="alert alert-success" role="alert">
+  {{ session('done') }}
+</div>
+@endif
       <h2 class="font-weight-bold">
         Contact Us
       </h2>
