@@ -48,7 +48,18 @@
                              
    </div>   
    <div>
-                <a href="/reg_to_tourn/id/{{Auth::user()->id}}/{{$data->tourn_id}}" class="btn  btn-lg active" role="button" aria-pressed="true">Register</a>
+    @if( Auth::user()->tourn_joined == 0)
+
+    
+      <a href="/reg_to_tourn/id/{{Auth::user()->id}}/{{$data->tourn_id}}" class="btn  btn-lg active" role="button" aria-pressed="true">Register</a>
+
+    @else 
+      <div class="alert alert-success" role="alert">
+        You are already in a tournement
+      </div>
+    
+
+    @endif
 </div>
 
 

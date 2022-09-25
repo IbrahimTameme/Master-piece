@@ -1,9 +1,11 @@
+
+
 @extends('layouts.app')
 
 
 @push('scripts')
-<script type="text/javascript" src="{{'js/jquery-3.4.1.min.js'}}"></script>
-<script type="text/javascript" src="{{'js/bootstrap2.js'}}"></script>
+<script type="text/javascript" src="{{'/js/jquery-3.4.1.min.js'}}"></script>
+<script type="text/javascript" src="{{'/js/bootstrap2.js'}}"></script>
 
 <script src="{{'./js/card.js'}}"></script>
     
@@ -16,6 +18,7 @@
 
 
     <!-- slider section -->
+
     <section class=" slider_section position-relative">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -94,6 +97,7 @@
           @endforeach
          
         </div>
+      </div>
         <div class="custom_carousel-control">
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="sr-only">Previous</span>
@@ -111,21 +115,26 @@
 
 
     <!-- cart section -->
-    
+    <div class="container mt-5 " >
+      
     <div class="cards-wrapper">
+      <div class="row col col-10 gap-4">
       @foreach($view2 as $data) 
+      
       <div class="card-wrapper">
-          <div class="card-1 card-object card-object-hf" style="background: #222  url(../images/{{$data->category_image}}) 90% 35% no-repeat; "><a class="face front" href="#">
-                  <div class="title-wrapper">
-                      <div class="title">{{$data->category_name}}</div>
-                 
+        <div class="card-1 card-object card-object-hf  " style="background: #222  url(../images/{{$data->category_image}}) 90% 35% no-repeat; "><a class="face front" href="#">
+            <div class="title-wrapper">
+                <div class="title">{{$data->category_name}}</div>
+                 </div>
+               
+                
                   </div>              
-              </a></div>
-      </div>
-     
+               
+            </div></a>
       @endforeach
-   
+      </div>
     </div>
+  </div>
 
 
 
@@ -133,7 +142,7 @@
   <!-- fruits section -->
 
   <section class="fruit_section">
-    <div class="container">
+    <div class="container mt-5">
       <h2 class="custom_heading">Ultimate Expierence</h2>
       <p class="custom_heading-text">
         There are many variations of passages of Lorem Ipsum available, but
@@ -441,6 +450,7 @@
   <!-- google map js -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap">
   </script>
+
   <!-- end google map js -->
 
 

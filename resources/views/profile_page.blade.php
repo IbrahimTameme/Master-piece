@@ -70,9 +70,10 @@
                   <p class="lead">Created tournaments</p>
                   @foreach ($view1 as $data)
 
-                  <div class="card">
+                  <div class="card m-2">
                     <div class="card-body">
-                      {{$data->tourn_name}}
+                     Tournament name: {{$data->tourn_name}}
+                     Tournament Category
                     </div>
                   </div>
                       

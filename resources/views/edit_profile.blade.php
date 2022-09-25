@@ -31,7 +31,7 @@
                         <input type="file" name="img" required style="font-size:small;">
                         <input type="submit" name="addItem" value="edit" style="font-size:small;">
                   </form>
-                    <button class="btn btn-primary" type="button">Upload new image</button>
+                    <button class="btn btn-primary mt-5" type="button">Upload new image</button>
                 </div>
             </div>
         </div>

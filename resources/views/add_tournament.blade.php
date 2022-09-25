@@ -81,7 +81,7 @@
                                 <input class="form-control" id="description" name="description" type="text" placeholder="Enter your tournament description"  >
                             </div>
                         <!-- Save changes button-->
-                        <button class="btn btn-primary"  type="submit">Submit</button>
+                        <button class="btn btn-primary "  type="submit">Submit</button>
                     </form>
                 </div>
             </div> 

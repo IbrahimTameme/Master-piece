@@ -4,7 +4,7 @@
 
 <div class="container-fluid py-4">
     <div class="row">
-        <a href="{{url('createElder')}}" class="card-link btn w-10 " style="background-color:#2E0249 ; color:white; margin-left:85%">add</a>
+        <a href="{{url('createCategory')}}" class="card-link btn w-10 " style="background-color:#2E0249 ; color:white; margin-left:85%">add</a>
         </div>
       <div class="col-12">
         <div class="card my-4">

@@ -48,6 +48,13 @@ Route::get('etable', [NewController::class, 'displayETables'] );
 Route::get('etable', [NewController::Class,'viewElderData']);
 Route::get('createElder', [NewController::Class,'Viewaddd']);
 Route::post('createElder', [NewController::class, 'createElderData']);
+// wfdsfd
+Route::get('createCategory', [NewController::class, 'viewcreateCategory']);
+Route::post('createCategory', [NewController::class, 'createCategory']);
+
+Route::get('createSlider', [NewController::class, 'viewcreateSlider']);
+
+Route::post('createSlider', [NewController::class, 'createSlider']);
 Route::get('/delete/id/{id}', [NewController::class, 'deleteElderData']);
 Route::get('/delete_category/id/{id}', [NewController::class, 'delete_category']);
 
@@ -55,7 +62,7 @@ Route::get('/delete_slider/id/{id}', [NewController::class, 'delete_slider']);
 
 Route::get('/edit/id/{id}', [NewController::class, 'editElderData']);
 Route::put('/updateElder/id/{id}', [NewController::class, 'updateElderData']);
-Route::post('log', [NewController::Class, 'viewlogindata']);
+Route::post('logg', [NewController::Class, 'viewlogindata']);
 Route::get('Dashbord',  [NewController::class, 'showdynamicdata']);
 Route::get('PendingUsers',  [NewController::class, 'displayPenUsers']);
 Route::get('PendingRequests',  [NewController::class, 'displayPenReq']);
@@ -88,7 +95,7 @@ Route::get('/service', function()
 
 //all tournaments route
 Route::get('/tournaments',[TournamentController::class, 'tournaments']);
-Route::post('/tournaments',[TournamentController::class, 'tournaments']);
+Route::post('/tournaments',[TournamentController::class, 'tournaments_filter']);
 
 //single tournament route
 Route::get('info_tournament/id/{tourn_id}/',[TournamentController::class, 'info_tournament']);

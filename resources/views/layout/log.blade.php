@@ -17,13 +17,13 @@
       
         button.btn.btn-primary {
         color: #fff;
-        border-color:#008E89;
-        background: #008E89;
+        border-color:#2E0249;
+        background: #2E0249;
             
         }
         
         div.card{
-            color: #008E89;
+            color: #2E0249;
         }
             </style>
 </head>
@@ -32,11 +32,11 @@
         <div class="container">
             <div class="signin-content">
                 <div class="signin-image">
-                    <figure><img src='/img/login.png' alt="sing up image"></figure>
+                    <figure><img src='/img/login.jfif' alt="sing up image"></figure>
                 </div>
                 <div class="signin-form">
                     <h2 class="form-title">Login</h2>
-                    <form method="POST" action="{{url('login')}}">
+                    <form method="POST" action="{{url('logg')}}">
                         @csrf
                         <div class="form-group">
                             <label for="name"><i class="fa fa-user"></i></label>
@@ -53,7 +53,7 @@
                         </div>
                     @endif
                         <div class="form-group form-button">
-                            <button type="submit" name="login" id="signin" class="btn btn-primary btn-block"> login</button>
+                            <button type="submit" name="login" id="signin" class="btn btn-primary "> login</button>
                         </div>
                     </form>
                 </div>

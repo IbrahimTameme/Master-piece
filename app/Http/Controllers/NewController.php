@@ -97,8 +97,8 @@ class NewController extends Controller
 
      public function displaySliders()
      {
-        $rd = Sliders::table()->get();
-        return view('layout.penreq', compact('rd'));
+        $sliders = DB::table('sliders')->get();
+        return view('layout.Sliders', compact('sliders'));
      }
   
      public function deleteData($id){
@@ -155,8 +155,8 @@ class NewController extends Controller
      }
 
      public function delete_slider($id){
-        $usersInfo = DB::update('delete from tournaments  where tourn_id = ?',[ $id]);         
-        return redirect('PendingRequests')->with('message','The data has been Deleted successfully');
+        $usersInfo = DB::update('delete from sliders  where id = ?',[ $id]);         
+        return redirect('Sliders')->with('message','The data has been Deleted successfully');
      }
 
      
@@ -188,6 +188,35 @@ class NewController extends Controller
            $create->save();
            return redirect('etable')->with('message','The data has been added successfully');
          }
+
+         public function viewcreateCategory()
+         {
+            return view('layout.createCategory');
+         }
+
+         public function createCategory(Request $request){
+            $create=new category();
+            $create->category_name=$request->input('name');
+            $create->category_image=$request->input('img');
+            
+            $create->save();
+            return redirect('Categories')->with('message','The data has been added successfully');
+          }
+
+          public function viewcreateSlider()
+          {
+             return view('layout.createSlider');
+          }
+
+          public function createSlider(Request $request){
+            $create=new Sliders();
+            $create->sliders_name=$request->input('name');
+            $create->sliders_desc=$request->input('desc');
+            $create->sliders_img=$request->input('img');
+            
+            $create->save();
+            return redirect('Sliders')->with('message','The data has been added successfully');
+          }
   
         public function deleteElderData($id){
            $usersInfo = DB::table('tournaments')->where('tourn_id',$id)->delete();       
