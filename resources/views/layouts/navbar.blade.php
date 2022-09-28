@@ -42,7 +42,6 @@
             
           </div>
             <!-- Right Side Of Navbar -->
-
             <ul class="navbar-nav ms-auto">
               <!-- Authentication Links -->
               <div class="nav-item dropdown">
@@ -74,17 +73,19 @@
                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
-           
+           @endif
             
    
 
     
   </div> 
 </ul>
+
+         
 </nav>
 </div>
 </header>
-  </div>@endif
+  
 
 
     <script type="text/javascript" src="{{'/js/jquery-3.4.1.min.js'}}"></script>
