@@ -29,6 +29,7 @@
 
 <!-- bootstrap core css -->
 <link rel="stylesheet" type="text/css" href="{{asset('/css/bootstrap.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('/js/bootstrap2.js')}}" />
 
 <!-- fonts style -->
 <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet" />

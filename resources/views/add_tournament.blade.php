@@ -21,9 +21,9 @@
       
         <div class="col-xl-8">
             <!-- Account details card-->
-            <div class="card mb-4">
+            <div class="card mb-4 ">
                 <div class="card-header">Tournament details</div>
-                <div class="card-body">
+                <div class="card-body ">
                     <form method="post" action="{{url('/create_tournament')}}" id='use'> 
                         @csrf
                         <!-- Form Row-->
@@ -39,9 +39,8 @@
                                 <select class="form-control" id="category"  name="category" type="text" placeholder="Enter your category" >
                                     <option value="1">Football</option>
                                     <option value="2">Basketball</option>
-                                    <option value="3">Swimming</option>
-                                    <option value="4">billiards</option>
-                                    <option value="5">E-sport</option>
+                                    <option value="3">Tennis</option>
+                                    
                                 </select>
                             </div>
                         </div>
@@ -50,12 +49,12 @@
                             <!-- Form Group (number_of_teams)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="number_of_teams">Number of teams</label>
-                                <input class="form-control" id="number_of_teams" name="number_of_teams" type="text" placeholder="Enter your organization name" value="Start Bootstrap">
+                                <input class="form-control" id="number_of_teams" name="number_of_teams" type="text" placeholder="Enter your organization name" >
                             </div>
                             <!-- Form Group (prize)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="prize">Prize</label>
-                                <input class="form-control" id="prize" name="prize" type="text" placeholder="Enter your location" value="San Francisco, CA">
+                                <input class="form-control" id="prize" name="prize" type="text" placeholder="Enter your location" >
                             </div>
                         </div>
                       
@@ -81,7 +80,12 @@
                                 <input class="form-control" id="description" name="description" type="text" placeholder="Enter your tournament description"  >
                             </div>
                         <!-- Save changes button-->
-                        <button class="btn btn-primary "  type="submit">Submit</button>
+                       
+<div class="text-center">
+
+    <button class="btn quote_btn-container w-25  "  type="submit"> SUBMIt</button>
+</div>
+                        
                     </form>
                 </div>
             </div> 

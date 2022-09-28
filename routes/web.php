@@ -84,7 +84,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact_us']);
+
+
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'create_contact'])->name('contact');
+Route::post('/contact2', [App\Http\Controllers\ContactController::class, 'create_contact2'])->name('contact2');
+
 
 
 
@@ -95,6 +100,7 @@ Route::get('/service', function()
 
 //all tournaments route
 Route::get('/tournaments',[TournamentController::class, 'tournaments']);
+Route::get('/tournaments/{category}',[HomeController::class,'home_tournaments']);
 Route::post('/tournaments',[TournamentController::class, 'tournaments_filter']);
 
 //single tournament route

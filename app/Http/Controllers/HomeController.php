@@ -28,11 +28,38 @@ class HomeController extends Controller
     public function index()
     {
       $view1 = DB::table('sliders')->select('sliders_name','sliders_img','sliders_desc')->get();
-      $view2 = DB::table('categories')->select('category_name','category_image')->get();
+      $view2 = DB::table('categories')->select()->get();
       $view3 = DB::table('contacts')->take(3)->get();
 
 
         return view('home',compact('view1','view2','view3'));
+    }
+
+
+    public function home_tournaments( $category ){
+
+  $id = Auth::user()->id;
+    $data = User::find($id);
+
+
+       $view1 = DB::table('categories')->select('category_name','category_id')->get();
+
+        $view2 = DB::table('tournaments')->where('tourn_category',$category)
+    ->join('users', 'users.id','=','tournaments.tourn_creator')
+    ->join('categories','category_id','=','tournaments.tourn_category')
+    ->select('tournaments.*','users.name','categories.category_image')->get();
+
+   
+
+
+   
+   
+    
+       
+    
+
+return view('tournaments',compact('view1','view2'));
+
     }
 
 
@@ -41,7 +68,9 @@ class HomeController extends Controller
 
 
        $id = auth()->user()->id;
-      $view1 = DB::table('tournaments')->where('tourn_creator', $id)->get();
+      $view1 = DB::table('tournaments')->where('tourn_creator', $id)->orderBy('created_at')
+      ->join('categories','category_id','=','tournaments.tourn_category')
+        ->select('tournaments.*','categories.category_image','categories.category_name')->limit(3)->get();
 
         
        

@@ -4,8 +4,7 @@
 
 
 @push('scripts')
-<script type="text/javascript" src="{{'/js/jquery-3.4.1.min.js'}}"></script>
-<script type="text/javascript" src="{{'/js/bootstrap2.js'}}"></script>
+
 
 <script src="{{'./js/card.js'}}"></script>
     
@@ -111,19 +110,79 @@
 
     <!-- end slider section -->
   </div>
+<!-- service section -->
+
+<section class="service_section layout_padding ">
+  <div class="container">
+    <h2 class="custom_heading">Our Services</h2>
+    <p class="custom_heading-text">
+      There are many variations of passages of Lorem Ipsum available, but
+      the majority have
+    </p>
+    <div class=" layout_padding2">
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/128/3069/3069052.png" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">Create Tournament</h5>
+            <p class="card-text">
+              There are many variations of passages of Lorem Ipsum
+              available, but the majority have suffered alteration in some
+              form, by injected humour, or randomised words which don't look
+              even slightly believable.
+            </p>
+            <div>
+              <a href="add_tournament" class="custom_dark-btn">
+                Create 
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://static.thenounproject.com/png/1088365-200.png" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">Join Tournament</h5>
+            <p class="card-text">
+              There are many variations of passages of Lorem Ipsum
+              available, but the majority have suffered alteration in some
+              form, by injected humour, or randomised words which don't look
+              even slightly believable.
+            </p>
+            <div>
+              <a href="/tournaments" class="custom_dark-btn">
+                Join
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <a href="" class="custom_dark-btn readmore_btn">
+        Read More
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- end service section -->
 
 
 
     <!-- cart section -->
     <div class="container mt-5 " >
-      
-    <div class="cards-wrapper">
-      <div class="row col col-10 gap-4">
+      <h2 class="custom_heading">FEATURED TOURNAMENTS</h2>
+      <p class="custom_heading-text">
+       Hand picked of the best upcoming tournaments
+      </p>
+    <div class="cards-wrapper row">
+      <div class="row d-flex align-items-center justify-content-center">
       @foreach($view2 as $data) 
       
-      <div class="card-wrapper">
-        <div class="card-1 card-object card-object-hf  " style="background: #222  url(../images/{{$data->category_image}}) 90% 35% no-repeat; "><a class="face front" href="#">
+      <div class="card-wrapper col-3 m-4 ">
+        <div class="card-1 card-object card-object-hf  " style="background: #222  url(../images/{{$data->category_image}}) 90% 35% no-repeat; "><a class="face front" href="tournaments/{{$data->category_id}}">
             <div class="title-wrapper">
+              
                 <div class="title">{{$data->category_name}}</div>
                  </div>
                
@@ -141,7 +200,7 @@
  <!-- cart end section -->
   <!-- fruits section -->
 
-  <section class="fruit_section">
+  <section class="fruit_section mt-5">
     <div class="container mt-5">
       <h2 class="custom_heading">Ultimate Expierence</h2>
       <p class="custom_heading-text">
@@ -165,7 +224,7 @@
         </div>
         <div class="col-md-4 d-flex justify-content-center align-items-center">
           <div class="fruit_img-box d-flex justify-content-center align-items-center">
-            <img src="https://cdn-icons.flaticon.com/png/512/3083/premium/3083603.png?token=exp=1655916227~hmac=53fb972e743b4e0c3d742346006296f8" alt="" class="exp_img" width="250px" />
+            <img src="https://img.icons8.com/external-konkapp-outline-color-konkapp/512/000000/external-tournament-soccer-konkapp-outline-color-konkapp.png" alt="" class="exp_img" width="250px" />
           </div>
         </div>
       </div>
@@ -207,7 +266,7 @@
         </div>
         <div class="col-md-4 d-flex justify-content-center align-items-center">
           <div class="fruit_img-box d-flex justify-content-center align-items-center">
-            <img src="https://cdn-icons.flaticon.com/png/512/5293/premium/5293634.png?token=exp=1655916588~hmac=e147886260c93e1aa90f7dc4e85f8cc6" alt="" class="exp_img" width="250px" />
+            <img src="https://img.icons8.com/external-filled-outline-geotatah/512/000000/external-arrange-emergency-and-disaster-management-color-filled-outline-geotatah.png" alt="" class="exp_img" width="250px" />
           </div>
         </div>
       </div>
@@ -227,63 +286,7 @@
  
   <!-- end tasty section -->
 
-  <!-- service section -->
-
-  <section class="service_section layout_padding ">
-    <div class="container">
-      <h2 class="custom_heading">Our Services</h2>
-      <p class="custom_heading-text">
-        There are many variations of passages of Lorem Ipsum available, but
-        the majority have
-      </p>
-      <div class=" layout_padding2">
-        <div class="card-deck">
-          <div class="card">
-            <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/128/3069/3069052.png" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">Create Tournament</h5>
-              <p class="card-text">
-                There are many variations of passages of Lorem Ipsum
-                available, but the majority have suffered alteration in some
-                form, by injected humour, or randomised words which don't look
-                even slightly believable.
-              </p>
-              <div>
-                <a href="add_tournament" class="custom_dark-btn">
-                  Create 
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="https://static.thenounproject.com/png/1088365-200.png" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">Join Tournament</h5>
-              <p class="card-text">
-                There are many variations of passages of Lorem Ipsum
-                available, but the majority have suffered alteration in some
-                form, by injected humour, or randomised words which don't look
-                even slightly believable.
-              </p>
-              <div>
-                <a href="/tournaments" class="custom_dark-btn">
-                  Join
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <a href="" class="custom_dark-btn readmore_btn">
-          Read More
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- end service section -->
-
+  
   <!-- client section -->
 
   <section class="client_section layout_padding">
@@ -303,7 +306,7 @@
 <div class="carousel-item active">
   <div class="client_container layout_padding2">
     <div class="client_img-box">
-      <img src="images/client.png" alt="" />
+      <img src="https://img.icons8.com/external-flat-andi-nur-abdillah/512/000000/external-Player-football-(flat)-flat-andi-nur-abdillah.png" alt="" />
     </div>
     <div class="client_detail">
       <h3>
@@ -324,7 +327,7 @@
 <div class="carousel-item ">
   <div class="client_container layout_padding2">
     <div class="client_img-box">
-      <img src="images/client.png" alt="" />
+      <img src="https://img.icons8.com/external-flat-andi-nur-abdillah/512/000000/external-Player-football-(flat)-flat-andi-nur-abdillah.png" alt="" />
     </div>
     <div class="client_detail">
       <h3>

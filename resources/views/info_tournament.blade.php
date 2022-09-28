@@ -79,8 +79,10 @@
          
         </div>
         <div class="row h-50">
-          <div class="col">
-c
+          <div class="col text-black">
+*Time of the tournament is from the start data 
+<br>
+*Signing to the tournament means that your agree on the TOS
           </div>
           
         </div>

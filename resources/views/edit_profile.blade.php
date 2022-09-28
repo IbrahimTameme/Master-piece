@@ -31,7 +31,7 @@
                         <input type="file" name="img" required style="font-size:small;">
                         <input type="submit" name="addItem" value="edit" style="font-size:small;">
                   </form>
-                    <button class="btn btn-primary mt-5" type="button">Upload new image</button>
+                    <button class="btn quote_btn-container mt-5" type="button">Upload new image</button>
                 </div>
             </div>
         </div>
@@ -89,7 +89,9 @@
                            
                         </div>
                         <!-- Save changes button-->
-                        <button class="btn btn-primary"  type="submit">Save changes</button>
+                        <div class="text-center">
+                        <button class="btn quote_btn-container" style="width:40%" type="submit">Save changes</button>
+                        </div>
                     </form>
                 </div>
             </div>

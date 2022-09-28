@@ -42,8 +42,49 @@
             
           </div>
             <!-- Right Side Of Navbar -->
+
+            <ul class="navbar-nav ms-auto">
+              <!-- Authentication Links -->
+              <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Account </a>
+                <div class="dropdown-menu rounded-0 border-0 m-0">
+                    @guest
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="dropdown-item" href="{{ route('login') }}"><i class="fa-solid fa-right-to-bracket"> </i> {{ __('Login') }}</a>
+                        </li>
+                    @endif
+
+                    @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="{{ route('register') }}"><i class="fa-solid fa-user-plus"></i> {{ __('Signup') }} </a>
+                    </li>
+                @endif
+            @else
+
+
+
+                    <a href="/profile_page" class="dropdown-item"><i class="fa-solid fa-user">  </i> {{ Auth::user()->name }} </a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();"><i class="fa-solid fa-arrow-right-from-bracket"> </i>{{ __('Logout') }}
+
+                 </a>
+
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+           
             
-    </header>
+   
+
+    
+  </div> 
+</ul>
+</nav>
+</div>
+</header>
+  </div>@endif
 
 
     <script type="text/javascript" src="{{'/js/jquery-3.4.1.min.js'}}"></script>

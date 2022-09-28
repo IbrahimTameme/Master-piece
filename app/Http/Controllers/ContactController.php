@@ -31,4 +31,30 @@ class ContactController extends Controller
 
         
     }
+
+
+    public function create_contact2(Request $request)
+    {
+        $name=$request->input('name');
+        $phone_number=$request->input('phone_number');
+        $email=$request->input('email');
+        $message=$request->input('message');
+      
+      
+        DB::insert('insert into contacts (name,phone_number,email,message) values (?,?,?,?)',[$name,$phone_number,$email,$message]);
+
+
+      
+        return redirect('contact')->with('done','You have successfully added a tournament');
+      
+
+        
+    }
+
+
+
+    public function contact_us(){
+
+        return view('contact');
+    }
 }

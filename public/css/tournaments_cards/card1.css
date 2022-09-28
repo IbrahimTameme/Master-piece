@@ -194,6 +194,15 @@ img {
   flex-direction: column;
   overflow: hidden;
   border-radius: 25px;
+  height: 35%;
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .card {
+    height: 600px !important;
+  }
+  
 }
 
 .card_content {

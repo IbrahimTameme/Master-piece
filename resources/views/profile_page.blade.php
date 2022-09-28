@@ -21,8 +21,8 @@
         <div class="grid profile">
           <div class="grid-header">
             <div class="row ">
-              <div class="col-sm-12 d-flex flex-row-reverse">
-               <a href="/edit_profile"><button class="btn btn-primary" href="/edit_profile" >Edit profile</button></a> 
+              <div class="col-sm-12 d-flex flex-row-reverse" >
+               <a href="/edit_profile"><button class="btn quote_btn-container update_profile_button " href="/edit_profile" >Edit profile</button></a> 
               </div>
             </div>
             
@@ -67,18 +67,33 @@
               <div class="tab-content">
                 <!-- BEGIN PROFILE -->
                 <div class="tab-pane active" id="profile">
-                  <p class="lead">Created tournaments</p>
+                  <p class="lead text-uppercase">CREATED TOURNAMENTS</p>
+                  <h5 class="">
+                  Most recent tournaments
+                  </h5>
                   @foreach ($view1 as $data)
 
-                  <div class="card m-2">
-                    <div class="card-body">
-                     Tournament name: {{$data->tourn_name}}
-                     Tournament Category
+                  <div class="card m-2 profile_tournament" >
+                    <div class="card-body row d-flex align-items-center justify-content-around">
+                      <div class="col-sm-12 col-md-3">
+                        <img src="/images/{{$data->category_image}}" width="100px" height="100px" alt="">
+                      </div>
+                      
+                     <div class="col-sm-12 col-md-3">
+                                           <p><b>Tournament name:</b>  {{$data->tourn_name}}</p>
+
+                     </div>
+
+                     <div class="col-sm-12 col-md-3">
+                        <p> <b>Tournament Category:</b> {{$data->category_name}}</p>
+                     </div>
+                  
+                    
                     </div>
                   </div>
                       
                   @endforeach
-                  {{$view1}}
+                 
                   <div class="row">
                    
                   </div>

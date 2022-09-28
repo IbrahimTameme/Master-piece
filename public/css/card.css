@@ -95,8 +95,9 @@
 }
  .face.front .title-wrapper {
 	 position: absolute;
+	 width: 70%;
 	 bottom: 3%;
-	 left: 25%;
+	 left: 15%;
 	 right: 25%;
 	 overflow: hidden;
 	 display: flex;

@@ -44,9 +44,8 @@
                                     <select class="form-control" id="category"  name="category" type="text" placeholder="Enter your category" >
                                         <option value="1">Football</option>
                                         <option value="2">Basketball</option>
-                                        <option value="3">Swimming</option>
-                                        <option value="4">billiards</option>
-                                        <option value="5">E-sport</option>
+                                        <option value="3">Tennis</option>
+                                     
                                     </select><br>
                                     <span style="color: red;">@error('category'){{$message}}@enderror </span>
 

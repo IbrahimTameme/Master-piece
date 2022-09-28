@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title','Elder')
+@section('title','Tournament')
 @section('content')
 
 <div class="container-fluid py-4">

@@ -25,15 +25,17 @@ class TournamentController extends Controller
       
   
   
-      $view2 = DB::table('tournaments')->where('tourn_category',$category)
+      $view2 = DB::table('tournaments')->where('tourn_category',$category)->where('is_set',1)
         ->join('users', 'users.id','=','tournaments.tourn_creator')
-        ->select('tournaments.*','users.name')->get();
+        ->join('categories','category_id','=','tournaments.tourn_category')
+        ->select('tournaments.*','users.name','categories.category_image')->get();
 
 
         if ($category == '*') {
-          $view2 = DB::table('tournaments')
+          $view2 = DB::table('tournaments')->where('is_set',1)
           ->join('users', 'users.id','=','tournaments.tourn_creator')
-          ->select('tournaments.*','users.name')->get();
+          ->join('categories','category_id','=','tournaments.tourn_category')
+          ->select('tournaments.*','users.name','categories.category_image')->get();
   
         }
     
@@ -56,9 +58,10 @@ class TournamentController extends Controller
 
        $view1 = DB::table('categories')->select('category_name','category_id')->get();
 
-        $view2 = DB::table('tournaments')
+        $view2 = DB::table('tournaments')->where('is_set',1)
     ->join('users', 'users.id','=','tournaments.tourn_creator')
-    ->select('tournaments.*','users.name')->get();
+    ->join('categories','category_id','=','tournaments.tourn_category')
+    ->select('tournaments.*','users.name','categories.category_image')->get();
 
    
 

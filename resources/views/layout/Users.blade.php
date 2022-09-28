@@ -8,8 +8,8 @@
         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
         </div>
         <div class="card-body">
-          <h6 class="mb-0 mt-4" style="text-align:center"><i class="material-icons text-sm my-auto me-1">schedule</i> &nbsp;Pending Users</h6>
-          <p class="mt-2" style="text-align:center">Users who are Waiting to Your Approval</p>
+          <h6 class="mb-0 mt-4" style="text-align:center"><i class="material-icons text-sm my-auto me-1">schedule</i> &nbsp;ADMINS PANEL</h6>
+          <p class="mt-2" style="text-align:center">Admins panel to delete admins</p>
           <hr class="dark horizontal">
           <div class="d-flex ml-5">
           <a href="{{url('PendingUsers')}}"style="margin-left:15% ; padding-bottom:5%"><button class="btn bg-gradient-primary" >Show Pending Users </button></a>
